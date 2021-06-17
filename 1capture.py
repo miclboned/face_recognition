@@ -12,7 +12,7 @@ total = 100
 
 #存檔目錄
 def saveImage(face_image, index):
-    filename = 'images/h0/{:02d}.jpg'.format(index)
+    filename = "/home/pi/face_recognition/dataset/train/"+"WuZhiXaun."+str(index)+".jpg"
     cv2.imwrite(filename, face_image)
     print(filename)
 
@@ -33,6 +33,7 @@ while n > 0:
         if n % 5 == 0:
             face_image = cv2.resize(gray[y: y + h, x: x + w], (200, 200))
             saveImage(face_image, index)
+	    #cv2.putText(face_image,str(index),(50,50),cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
             index += 1
             if index >= total:
                 print('get training data done')
