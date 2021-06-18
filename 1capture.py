@@ -13,9 +13,15 @@ total = 100
 #存檔目錄
 def saveImage(face_image, index):
     filename = "/home/pi/face_recognition/dataset/train/"+"WuZhiXaun."+str(index)+".jpg"
+    filename2 = "/home/pi/face_recognition/dataset/test/"+"WuZhiXaun."+str(index)+".jpg"
+    filename3 = "/home/pi/face_recognition/dataset/vaild/"+"WuZhiXaun."+str(index)+".jpg"
     cv2.imwrite(filename, face_image)
+    cv2.imwrite(filename2, face_image)
+    cv2.imwrite(filename3, face_image)
     print(filename)
-
+    print(filename2)
+    print(filename3)
+    
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 cap = cv2.VideoCapture(0)
 cv2.namedWindow('video', cv2.WINDOW_NORMAL)
