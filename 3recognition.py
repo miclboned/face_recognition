@@ -3,6 +3,9 @@
 #file name:ch3-06/3recognition.py
 import cv2
 import numpy as np
+#from keras.models import load_model
+#model=load_model('face_recognition2.h5')
+#model.summary()
 
 model = cv2.face.LBPHFaceRecognizer_create()
 model.read('faces.data')
